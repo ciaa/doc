@@ -1,0 +1,13 @@
+<chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>Esto es un título</title>
+   <para>Esto es un parrafo<footnote><para>con una nota al pie.</para></footnote></para>
+   <para>Este es otro parrafo con un link a interent <link xlink:href="http://mylink"/>.</para>
+   <itemizedlist>
+      <listitem><para>Una lista sin numeracción.</para></listitem>
+      <listitem><para>Un segundo elemento en la listai.</para></listitem>
+   </itemizedlist>
+   <section xml:id="ref_a_esta_sec"><title>Esto es una sub sección</title>
+      <para>Con otro parrrafo.</para>
+      <indexterm><primary>Elemento para el índice</primary></indexterm>
+      <para>Reference a una la <xref linkend="ref_a_esta_sec"/>.</para>
+   </section>
+</chapter>

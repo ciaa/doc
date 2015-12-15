@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE book [
+<!ENTITY intro SYSTEM "chapters/intro/intro.xml">
+]>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="es">
+   <info>
+      <title>CIAA-Firmware</title>
+      <subtitle>TODO</subtitle>
+      <author>
+         <orgname>ACSE</orgname>
+      </author>
+      <editor>
+         <orgname>ACSE</orgname>
+      </editor>
+      <copyright><year>2015</year><holder>Proyecto CIAA</holder></copyright>
+      <legalnotice>
+         <para>El copyright sobre los &#xED;conos
+            <mediaobject>
+               <imageobject>
+                  <imagedata width="20%" fileref="images/icons.png"/>
+               </imageobject>
+            </mediaobject>
+            es de VistaICO.com. Los mismos se distribuyen bajo la licencia
+            <link xlink:href="http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/licenses/by/3.0/</link>.</para>
+         <para>El copyright sobre el archivo style.css utilizado en el formato HTML es de The FreeBSD Documentation Project y se distribuyen
+            bajo la licencia BSD de 2 clausulas.</para>
+         <para>El resto del trabajo se distribuye con la Licencia Creative Commons Atribucion - Compartir Igual 4.0. <link xlink:href="http://creativecommons.org/licenses/by-nc-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</link>
+            <mediaobject>
+               <imageobject>
+                  <imagedata width="10%" fileref="images/by-sa.svg"/>
+               </imageobject>
+            </mediaobject>
+         </para>
+      </legalnotice>
+   </info>
+   <preface><title>Como leer el libro</title>
+      <warning><para>Este es un recuadro de atenci&#xF3;n</para></warning>
+   </preface>
+   <glossary>
+      <title>Glosario</title>
+      <glossentry xml:id="ACSE">
+         <glossterm>ACSE</glossterm>
+         <glossdef>
+            <para>Asociaci&#xF3;n Civil para la Investigaci&#xF3;n, Promoci&#xF3;n y Desarrollo de los Sistemas Embebidos
+               (<link xlink:href="http://www.sase.com.ar/asociacion-civil-sistemas-embebidos/"/>).</para>
+         </glossdef>
+      </glossentry>
+      <glossentry xml:id="CIAA">
+         <glossterm>CIAA</glossterm>
+         <glossdef>
+            <para>Computadora Industrial Abierta Argentina (<link xlink:href="http://www.proyecto-ciaa.com.ar"/>).</para>
+         </glossdef>
+      </glossentry>
+   </glossary>
+   <chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>Esto es un t&#xED;tulo</title>
+   <para>Esto es un parrafo<footnote><para>con una nota al pie.</para></footnote></para>
+   <para>Este es otro parrafo con un link a interent <link xlink:href="http://mylink"/>.</para>
+   <itemizedlist>
+      <listitem><para>Una lista sin numeracci&#xF3;n.</para></listitem>
+      <listitem><para>Un segundo elemento en la listai.</para></listitem>
+   </itemizedlist>
+   <section xml:id="ref_a_esta_sec"><title>Esto es una sub secci&#xF3;n</title>
+      <para>Con otro parrrafo.</para>
+      <indexterm><primary>Elemento para el &#xED;ndice</primary></indexterm>
+      <para>Reference a una la <xref linkend="ref_a_esta_sec"/>.</para>
+   </section>
+</chapter>
+
+   <bibliography>
+      <title>Bibliograf&#xED;a</title>
+      <biblioentry xml:id="KR">
+         <abbrev>K&amp;R</abbrev>
+         <authorgroup>
+            <author><personname><firstname>Brain W.</firstname><surname>Kernghan</surname></personname></author>
+            <author><personname><firstname>Dennis M.</firstname><surname>Ritchie</surname></personname></author>
+         </authorgroup>
+         <copyright><year>1988</year>
+            <holder>Bell Telephone Laboratories, Incorporated</holder></copyright>
+         <publisher>
+            <publishername>Prentice Hall Sofware Series</publishername>
+         </publisher>
+         <edition>Second Edition</edition>
+         <title>The C (ANSI C) Programming Language.</title>
+      </biblioentry>
+      <!--biblioentry xml:id="C11">
+         <abbrev>C11</abbrev>
+         <orgname>ISO/IEC</orgname>
+         <copyright><year>2011</year>
+            <holder>ISO/IEC</holder>
+         </copyright>
+         <productnumber>ISO/IEC 9899:2011</productnumber>
+         <title>Programming languages - C</title>
+      </biblioentry>
+      <biblioentry xml:id="C99">
+         <abbrev>C99</abbrev>
+         <orgname>ISO/IEC</orgname>
+         <copyright><year>1999</year>
+            <holder>ISO/IEC</holder>
+         </copyright>
+         <productnumber>ISO/IEC 9899:1999</productnumber>
+         <title>Programming languages - C</title>
+      </biblioentry>
+      <biblioentry xml:id="C90">
+         <abbrev>C90</abbrev>
+         <orgname>ISO/IEC</orgname>
+         <copyright><year>1990</year>
+            <holder>ISO/IEC</holder>
+         </copyright>
+         <productnumber>ISO/IEC 9899:1990</productnumber>
+         <title>Programming languages - C</title>
+      </biblioentry-->
+   </bibliography>
+   <index/>
+</book>
