@@ -38,3 +38,4 @@ help:
 	@echo html....................: generates html output
 	@echo doc.....................: generates pdf output
 	@echo clean...................: cleans the project
+	@echo spell...................: check spelling
