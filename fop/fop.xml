@@ -1,0 +1,45 @@
+<fop version="1.0">
+   <renderers>
+      <renderer mime="application/pdf">
+         <fonts>
+            <font kerning="yes" embed-url="fop/fonts/Padauk.ttf" embedding-mode="subset">
+               <font-triplet name="Padaku" style="normal" weight="normal"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Padauk-book.ttf" embedding-mode="subset">
+               <font-triplet name="Padaku" style="italic" weight="normal"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Purisa.ttf" embedding-mode="subset">
+               <font-triplet name="Purisa" style="normal" weight="normal"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Purisa.ttf" embedding-mode="subset">
+               <font-triplet name="Purisa" style="normal" weight="normal"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Ubuntu-R.ttf" embedding-mode="subset">
+               <font-triplet name="Ubuntu" style="normal" weight="normal"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Ubuntu-RI.ttf" embedding-mode="subset">
+               <font-triplet name="Ubuntu" style="italic" weight="normal"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Ubuntu-B.ttf" embedding-mode="subset">
+               <font-triplet name="Ubuntu" style="normal" weight="bold"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Ubuntu-BI.ttf" embedding-mode="subset">
+               <font-triplet name="Ubuntu" style="italic" weight="bold"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Ubuntu-L.ttf" embedding-mode="subset">
+               <font-triplet name="Ubuntu Light" style="normal" weight="normal"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Ubuntu-LI.ttf" embedding-mode="subset">
+               <font-triplet name="Ubuntu Light" style="italic" weight="normal"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Ubuntu-B.ttf" embedding-mode="subset">
+               <font-triplet name="Ubuntu Light" style="normal" weight="bold"/>
+            </font>
+            <font kerning="yes" embed-url="fop/fonts/Ubuntu-BI.ttf" embedding-mode="subset">
+               <font-triplet name="Ubuntu Light" style="italic" weight="bold"/>
+            </font>
+         </fonts>
+      </renderer>
+   </renderers>
+</fop>
+

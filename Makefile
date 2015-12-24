@@ -32,3 +32,9 @@ cp:
 spell:
 	aspell --mode=sgml --lang=es check book.xml
 	aspell --mode=sgml --lang=es check chapters/osek.xml
+
+help:
+	@echo validate................: validates the docbook xml agianst the schema
+	@echo html....................: generates html output
+	@echo doc.....................: generates pdf output
+	@echo clean...................: cleans the project

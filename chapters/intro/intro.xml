@@ -1,13 +1,28 @@
-<chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>Esto es un título</title>
-   <para>Esto es un parrafo<footnote><para>con una nota al pie.</para></footnote></para>
-   <para>Este es otro parrafo con un link a interent <link xlink:href="http://mylink"/>.</para>
-   <itemizedlist>
-      <listitem><para>Una lista sin numeracción.</para></listitem>
-      <listitem><para>Un segundo elemento en la listai.</para></listitem>
-   </itemizedlist>
-   <section xml:id="ref_a_esta_sec"><title>Esto es una sub sección</title>
-      <para>Con otro parrrafo.</para>
-      <indexterm><primary>Elemento para el índice</primary></indexterm>
-      <para>Reference a una la <xref linkend="ref_a_esta_sec"/>.</para>
+<chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>Introducción</title>
+   <para>Este documento es la documentación oficial de la <emphasis><xref linkend="CIAA"/></emphasis>.</para>
+
+   <section><title>¿Qué es la CIAA?</title>
+      <para>La <xref linkend="CIAA"/> (Computadora Industrial Abierta Argentina) es una plataforma creada para impulsar
+         el desarrollo tecnológico, generar conocimiento, y darle la posibilidad a PyMEs de poder basar sus trabajos
+         en una plataforma testeada y con la mayor cantidad de funcionalidades posible. Reduciendo así el tiempo y la
+         inversión necesaria para poder llegar a un producto final.</para>
+   </section>
+
+   <section><title>Mejorando la documentación</title>
+      <para>TODO</para>
+   </section>
+
+   <section><title>Soporte</title>
+      <para>Siempre recomendamos empezar leyendo esta documentación. De no encontrar respuesta a sus preguntas,
+         se puede buscar en el historial de los foros de desarrollo:</para>
+      <itemizedlist>
+         <listitem><para>CIAA-Software-IDE</para></listitem>
+         <listitem><para>CIAA-Hardware</para></listitem>
+         <listitem><para>CIAA-Firmware</para></listitem>
+         <listitem><para>CIAA-Linux</para></listitem>
+         <listitem><para>CIAA-Software-PLC</para></listitem>
+         <listitem><para>EDU-CIAA</para></listitem>
+      </itemizedlist>
+      <para>O suscribirse a las mismos y hacer las preguntas al foro.</para>
    </section>
 </chapter>
