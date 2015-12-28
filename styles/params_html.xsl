@@ -6,4 +6,5 @@
    <xsl:param name="admon.graphics" select="1"/>
    <xsl:param name="admon.textlabel" select="0"/>
    <xsl:param name="callout.graphics">0</xsl:param>
+   <xsl:param name="chunker.output.encoding">UTF-8</xsl:param>
 </xsl:stylesheet>
