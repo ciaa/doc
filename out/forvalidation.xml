@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE book [
 <!ENTITY intro SYSTEM "chapters/intro/intro.xml">
+<!ENTITY hisio SYSTEM "chapters/hisio/hisio.xml">
 ]>
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="es">
    <info>
@@ -52,17 +53,66 @@
          </glossdef>
       </glossentry>
    </glossary>
-   <chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>Esto es un t&#xED;tulo</title>
-   <para>Esto es un parrafo<footnote><para>con una nota al pie.</para></footnote></para>
-   <para>Este es otro parrafo con un link a interent <link xlink:href="http://mylink"/>.</para>
-   <itemizedlist>
-      <listitem><para>Una lista sin numeracci&#xF3;n.</para></listitem>
-      <listitem><para>Un segundo elemento en la listai.</para></listitem>
-   </itemizedlist>
-   <section xml:id="ref_a_esta_sec"><title>Esto es una sub secci&#xF3;n</title>
-      <para>Con otro parrrafo.</para>
-      <indexterm><primary>Elemento para el &#xED;ndice</primary></indexterm>
-      <para>Reference a una la <xref linkend="ref_a_esta_sec"/>.</para>
+   <chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>Introducci&#xF3;n</title>
+   <para>Este documento es la documentaci&#xF3;n oficial de la <emphasis><xref linkend="CIAA"/></emphasis>.</para>
+
+   <section><title>&#xBF;Qu&#xE9; es la CIAA?</title>
+      <para>La <xref linkend="CIAA"/> (Computadora Industrial Abierta Argentina) es una plataforma creada para impulsar
+         el desarrollo tecnol&#xF3;gico, generar conocimiento, y darle la posibilidad a PyMEs de poder basar sus trabajos
+         en una plataforma testeada y con la mayor cantidad de funcionalidades posible. Reduciendo as&#xED; el tiempo y la
+         inversi&#xF3;n necesaria para poder llegar a un producto final.</para>
+   </section>
+
+   <section><title>Mejorando la documentaci&#xF3;n</title>
+      <para>TODO</para>
+   </section>
+
+   <section><title>Soporte</title>
+      <para>Siempre recomendamos empezar leyendo esta documentaci&#xF3;n. De no encontrar respuesta a sus preguntas,
+         se puede buscar en el historial de los foros de desarrollo:</para>
+      <itemizedlist>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/ciaa-ide">CIAA-Software-IDE</link></para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/ciaa-hardware">CIAA-Hardware</link></para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/ciaa-firmware">CIAA-Firmware</link></para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/ciaa-linux">CIAA-Linux</link></para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/ciaa-software-plc">CIAA-Software-PLC</link></para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/educiaa">EDU-CIAA</link></para></listitem>
+      </itemizedlist>
+      <para>O suscribirse a las mismos y hacer las preguntas al foro.</para>
+      <section><title>Soporte de CIAA-Firmware</title>
+         <para>El CIAA-Firmware a partir de su versi&#xF3;n Upa 1.0.0 ofrece la posibilidad de generar un reporte del estado del Firmware.
+            El mismo se puede generar invocando <prompt>make report</prompt>. El comando generar&#xE1; un archivo <filename>report.log</filename>
+            que podr&#xE1; ser compromido y adjuntado al mail para pedir soporte.</para>
+      </section>
+   </section>
+</chapter>
+
+   <chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>HIS Input Output Drivers</title>
+   <para>El m&#xF3;dulo <emphasis>hisio</emphasis> provee al <xref linkend="CIAA-Frimware"/> con una interfaz
+      est&#xE1;tica y liviana de drivers.</para>
+   <para>El m&#xF3;dulo <emphasis>hisio</emphasis> se basa en el est&#xE1;ndar utilizado en la industria automotriz
+      <emphasis>API IO Driver</emphasis> y <emphasis>API IO Library</emphasis> (ver <xref linkend="apiiodriver"/>
+      y <xref linkend="apiiolibrary"/> respectivamente). Estos drivers fueron publicados por
+         <link xlink:href="http://portal.automotive-his.de/">automotive-his.de</link> que es un est&#xE1;ndar conjunto
+      de algunas automotrices alemanas.</para>
+   <para>Los est&#xE1;ndares publicados son de libre utilizaci&#xF3;n. Lamentablmente no se especifican todos los drivers
+      necesarios por el <xref linkend="CIAA-Firmware"/> por lo cual siguiendo lineamientos
+      fueron implementados los drivers <emphasis>Uart</emphasis> y <emphasis>I2C</emphasis>.</para>
+   <para>Los drivers tambi&#xE9;n especifican su configuraci&#xF3;n y generaci&#xF3;n. La configuraci&#xF3;n y generaci&#xF3;n del m&#xF3;dulo
+      <emphasis>hisio</emphasis> en el CIAA-Firmware no sigue los lineamentos del est&#xE1;ndar, sino que es
+      especifica del CIAA-Firmware.</para>
+   <note><para>Para reutilizar el parser y generador del RTOS, el cual se basa en OIL, es que se dicidi&#xF3;
+         seguir el mismo lenguaje de configuraci&#xF3;n para los drivers, siendo de esta forma no fiel al est&#xE1;ndar
+         para la configuraci&#xF3;n del m&#xF3;dulo <emphasis>hisio</emphasis>.</para></note>
+   <section><title>Uart</title>
+      <para>La interfaz de los drivers <emphasis>Uart</emphasis> puede ser utilizada para todos los dispositivos
+         de acceso serial a los datos, como ser: spi, uart, rs482, etc.</para>
+      <section><title>Configuraci&#xF3;n</title>
+         <para/>
+      </section>
+      <section><title>foo</title>
+         <para/>
+      </section>
    </section>
 </chapter>
 

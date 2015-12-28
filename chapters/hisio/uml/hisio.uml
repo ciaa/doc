@@ -1,0 +1,31 @@
+@startuml
+participant HW
+participant Uart
+participant Application
+
+== receving data ==
+activate HW
+HW -> Uart: <Uart>_RxIndicationSync
+activate Uart
+Uart -> Application: <UserName>_GetRxBufferSync
+activate Application
+note right: <UserName> is the name given in the configuration.
+Uart <-- Application
+note left: This interface is called to get a buffer to\nstore the received data. Is called when\nthe first frame of data is received or\nwhen the last provided buffer is full.
+deactivate Application
+HW <-- Uart
+deactivate Uart
+deactivate HW
+
+HW -> Uart: <Uart>_RxIndicationSync
+activate HW
+activate Uart
+note right: if the last Application provided buffer\nhas place, the data is stored on it,\nin other case the Application <UserName>_GetRxBufferSync is called.
+HW <-- Uart
+deactivate Uart
+deactivate HW
+
+
+
+
+@enduml

@@ -1,0 +1,28 @@
+<chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>HIS Input Output Drivers</title>
+   <para>El módulo <emphasis>hisio</emphasis> provee al <xref linkend="CIAA-Frimware"/> con una interfaz
+      estática y liviana de drivers.</para>
+   <para>El módulo <emphasis>hisio</emphasis> se basa en el estándar utilizado en la industria automotriz
+      <emphasis>API IO Driver</emphasis> y <emphasis>API IO Library</emphasis> (ver <xref linkend="apiiodriver"/>
+      y <xref linkend="apiiolibrary"/> respectivamente). Estos drivers fueron publicados por
+         <link xlink:href="http://portal.automotive-his.de/">automotive-his.de</link> que es un estándar conjunto
+      de algunas automotrices alemanas.</para>
+   <para>Los estándares publicados son de libre utilización. Lamentablmente no se especifican todos los drivers
+      necesarios por el <xref linkend="CIAA-Firmware"/> por lo cual siguiendo lineamientos
+      fueron implementados los drivers <emphasis>Uart</emphasis> y <emphasis>I2C</emphasis>.</para>
+   <para>Los drivers también especifican su configuración y generación. La configuración y generación del módulo
+      <emphasis>hisio</emphasis> en el CIAA-Firmware no sigue los lineamentos del estándar, sino que es
+      especifica del CIAA-Firmware.</para>
+   <note><para>Para reutilizar el parser y generador del RTOS, el cual se basa en OIL, es que se dicidió
+         seguir el mismo lenguaje de configuración para los drivers, siendo de esta forma no fiel al estándar
+         para la configuración del módulo <emphasis>hisio</emphasis>.</para></note>
+   <section><title>Uart</title>
+      <para>La interfaz de los drivers <emphasis>Uart</emphasis> puede ser utilizada para todos los dispositivos
+         de acceso serial a los datos, como ser: spi, uart, rs482, etc.</para>
+      <section><title>Configuración</title>
+         <para></para>
+      </section>
+      <section><title>foo</title>
+         <para></para>
+      </section>
+   </section>
+</chapter>

@@ -16,13 +16,18 @@
       <para>Siempre recomendamos empezar leyendo esta documentación. De no encontrar respuesta a sus preguntas,
          se puede buscar en el historial de los foros de desarrollo:</para>
       <itemizedlist>
-         <listitem><para>CIAA-Software-IDE</para></listitem>
-         <listitem><para>CIAA-Hardware</para></listitem>
-         <listitem><para>CIAA-Firmware</para></listitem>
-         <listitem><para>CIAA-Linux</para></listitem>
-         <listitem><para>CIAA-Software-PLC</para></listitem>
-         <listitem><para>EDU-CIAA</para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/ciaa-ide">CIAA-Software-IDE</link></para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/ciaa-hardware">CIAA-Hardware</link></para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/ciaa-firmware">CIAA-Firmware</link></para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/ciaa-linux">CIAA-Linux</link></para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/ciaa-software-plc">CIAA-Software-PLC</link></para></listitem>
+         <listitem><para><link xlink:href="https://groups.google.com/forum/#!forum/educiaa">EDU-CIAA</link></para></listitem>
       </itemizedlist>
       <para>O suscribirse a las mismos y hacer las preguntas al foro.</para>
+      <section><title>Soporte de CIAA-Firmware</title>
+         <para>El CIAA-Firmware a partir de su versión Upa 1.0.0 ofrece la posibilidad de generar un reporte del estado del Firmware.
+            El mismo se puede generar invocando <prompt>make report</prompt>. El comando generará un archivo <filename>report.log</filename>
+            que podrá ser compromido y adjuntado al mail para pedir soporte.</para>
+      </section>
    </section>
 </chapter>

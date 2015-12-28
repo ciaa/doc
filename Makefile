@@ -1,5 +1,17 @@
 DCBOOK_FILES	=	book.xml										\
-						$(wildcard chapters/intro/*xml)
+						$(wildcard chapters/intro/*xml)		\
+						$(wildcard chapters/hisio/*xml)
+
+UML_FILES		= $(wildcard chapters/hisio/uml/*.uml)
+
+PNG_FILES += $(notdir $(patsubst %.uml,%.png,$(UML_FILES)))
+
+PNG_OUT	=	out/png
+
+vpath %.png $(PNG_OUT)
+vpath %.uml chapters/hisio/uml
+
+png: $(PNG_FILES)
 
 clean:
 	rm -rf out/html/*
@@ -32,6 +44,14 @@ cp:
 spell:
 	aspell --mode=sgml --lang=es check book.xml
 	aspell --mode=sgml --lang=es check chapters/osek.xml
+
+
+%.png : %.uml
+	@echo ""
+	@echo ==================================================
+	@echo Converting $< to $@
+	@echo ""
+	java -jar plantuml.jar $< -o ../../$(PNG_OUT)
 
 help:
 	@echo validate................: validates the docbook xml agianst the schema
