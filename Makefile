@@ -86,10 +86,12 @@ $(1)_validate: $(OUT_DIR)$(DS)$(1)$(DS)forvalidation.xml
 $(1)_html: $(OUT_DIR)$(DS)$(1)$(DS)html $($(1)_DOCBOOK_FILES)
 	@echo Generating HTML for $(1)
 	xsltproc -o out$(DS)$(1)$(DS)html$(DS) $(HTML_STYLE) $($(1)_DOCBOOK_MFILE)
+	cp styles/css/style.css $(OUT_DIR)$(DS)$(BOOK)$(DS)html$(DS)style.css
 
 $(OUT_DIR)$(DS)$(1)$(DS)html$(DS)index.html: $(OUT_DIR)$(DS)$(1)$(DS)html $($(1)_DOCBOOK_FILES)
 	@echo Generating HTML for $(1)
 	xsltproc -o out$(DS)$(1)$(DS)html$(DS) $(HTML_STYLE) $($(1)_DOCBOOK_MFILE)
+	cp styles/css/style.css $(OUT_DIR)$(DS)$(BOOK)$(DS)html$(DS)style.css
 
 $(1)_pdf: $(OUT_DIR)$(DS)$(1)$(DS)pdf $($(1)_DOCBOOK_FILES)
 	@echo Generating PDF for $(1)
