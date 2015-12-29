@@ -1,0 +1,15 @@
+<chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>Introducción al CIAA-Firmware</title>
+   <para>Se denomina <emphasis>Firmware</emphasis> al programa que controla un dispositivo electrónico.
+      En el proyecto CIAA se ha desarrollado un Firmware propio al cual se lo denomina <emphasis>CIAA-Firmware</emphasis>.
+      El CIAA-Firmware permite al usuario crear una aplicación con valor agregado de forma rápida y sencilla, pero por
+      sobre todo le permite reutilizar el código escrito en múltiples plataformas.</para>
+   <para>El CIAA-Firmware ofrece un sistema operativo <xref linkend="ch_rtos"/></para>
+   <section><title>Módulos del Firmware</title>
+      <para>El CIAA-Firmware fue pensado para ser modular y escalable. El usuario.</para>
+   </section>
+   <section><title>Estructura de directorios</title>
+   </section>
+   <section><title>El Makefile</title>
+      <para>...</para>
+   </section>
+</chapter>
