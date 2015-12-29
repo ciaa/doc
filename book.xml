@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE book [
 <!ENTITY intro SYSTEM "chapters/intro/intro.xml">
+<!ENTITY introFirmware SYSTEM "chapters/introfirmware/introfirmware.xml">
 <!ENTITY hisio SYSTEM "chapters/hisio/hisio.xml">
 ]>
 <book xmlns="http://docbook.org/ns/docbook" version="5.0"
@@ -56,6 +57,7 @@
       </glossentry>
    </glossary>
    &intro;
+   &introfirmware;
    &hisio;
    <bibliography>
       <title>Bibliografía</title>

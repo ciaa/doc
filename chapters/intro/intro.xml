@@ -1,6 +1,5 @@
 <chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>Introducción</title>
    <para>Este documento es la documentación oficial de la <emphasis><xref linkend="CIAA"/></emphasis>.</para>
-
    <section><title>¿Qué es la CIAA?</title>
       <para>La <xref linkend="CIAA"/> (Computadora Industrial Abierta Argentina) es una plataforma creada para impulsar
          el desarrollo tecnológico, generar conocimiento, y darle la posibilidad a PyMEs de poder basar sus trabajos
