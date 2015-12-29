@@ -47,7 +47,10 @@ DS					= /
 # Include the makefile of each book
 include $(foreach BOOK, $(BOOKS), $(BOOK)$(DS)Makefile)
 # Default rule is to make all books
-all: $(BOOKS) directories
+all: $(foreach BOOK,$(BOOKS),\
+	$(OUT_DIR)$(DS)$(BOOK)$(DS)forvalidation.xml	\
+	$(OUT_DIR)$(DS)$(BOOK)$(DS)html$(DS)index.html \
+	$(OUT_DIR)$(DS)$(BOOK)$(DS)pdf$(DS)$(BOOK).pdf)
 
 .PHONY: directories
 
@@ -62,12 +65,17 @@ vpath %.uml chapters/hisio/uml
 png: $(PNG_FILES)
 
 clean:
-	rm -rf out/html/*
-	rm -rf out/pdf/*
+	rm -rf out/firmware
 
 
 define valrule
-$(OUT_DIR)$(DS)$(1)$(DS)forvalidation.xml: $($(1)_DOCBOOK_FILES)
+$(OUT_DIR)$(DS)$(1):
+	@echo Generating output dirs for $(1)
+	mkdir -p $(OUT_DIR)$(DS)$(1)
+	mkdir -p $(OUT_DIR)$(DS)$(1)$(DS)pdf
+	mkdir -p $(OUT_DIR)$(DS)$(1)$(DS)html
+
+$(OUT_DIR)$(DS)$(1)$(DS)forvalidation.xml: $(OUT_DIR)$(DS)$(1) $($(1)_DOCBOOK_FILES)
 	@echo Creating forvalidation for $(1) with $(2)
 	xmllint --noent $(2) > $(OUT_DIR)$(DS)$(1)$(DS)forvalidation.xml
 
@@ -75,20 +83,30 @@ $(1)_validate: $(OUT_DIR)$(DS)$(1)$(DS)forvalidation.xml
 	@echo Validating $(1)
 	xmllint --noout --schema $(DOCBOOK_SCHEMA) $(OUT_DIR)$(DS)$(1)$(DS)forvalidation.xml
 
-$(1)_html:
+$(1)_html: $(OUT_DIR)$(DS)$(1)$(DS)html $($(1)_DOCBOOK_FILES)
 	@echo Generating HTML for $(1)
-	xsltproc -o out$(DS)$(1)$(DS)html$(DS) $(HTML_STYLE) $($(1)_DOCBOOK_FILES)
+	xsltproc -o out$(DS)$(1)$(DS)html$(DS) $(HTML_STYLE) $($(1)_DOCBOOK_MFILE)
 
-$(1)_pdf:
-	xsltproc $(PDF_STYLE) $($(1)_DOCBOOK_FILES) > $(OUT_DIR)$(DS)pdf$(DS)$(1).fo
-	fop -c fop/fop.xml -fo $(OUT_DIR)$(DS)pdf$(DS)$(1).fo -pdf $(OUT_DIR)$(DS)pdf$(DS)$(1).pdf
+$(OUT_DIR)$(DS)$(1)$(DS)html$(DS)index.html: $(OUT_DIR)$(DS)$(1)$(DS)html $($(1)_DOCBOOK_FILES)
+	@echo Generating HTML for $(1)
+	xsltproc -o out$(DS)$(1)$(DS)html$(DS) $(HTML_STYLE) $($(1)_DOCBOOK_MFILE)
+
+$(1)_pdf: $(OUT_DIR)$(DS)$(1)$(DS)pdf $($(1)_DOCBOOK_FILES)
+	@echo Generating PDF for $(1)
+	xsltproc $(PDF_STYLE) $($(1)_DOCBOOK_MFILE) > $(OUT_DIR)$(DS)$(1)$(DS)pdf$(DS)$(1).fo
+	fop -c fop/fop.xml -fo $(OUT_DIR)$(DS)$(1)$(DS)pdf$(DS)$(1).fo -pdf $(OUT_DIR)$(DS)$(1)$(DS)pdf$(DS)$(1).pdf
+
+$(OUT_DIR)$(DS)$(1)$(DS)pdf$(DS)$(BOOK).pdf: $(OUT_DIR)$(DS)$(1)$(DS)pdf $($(1)_DOCBOOK_FILES)
+	@echo Generating PDF for $(1)
+	xsltproc $(PDF_STYLE) $($(1)_DOCBOOK_MFILE) > $(OUT_DIR)$(DS)$(1)$(DS)pdf$(DS)$(1).fo
+	fop -c fop/fop.xml -fo $(OUT_DIR)$(DS)$(1)$(DS)pdf$(DS)$(1).fo -pdf $(OUT_DIR)$(DS)$(1)$(DS)pdf$(DS)$(1).pdf
 
 $(1)_all: $(1)_validate $(1)_html $(1)_pdf
 endef
 
-$(foreach BOOK, $(BOOKS), $(eval $(call valrule,$(BOOK),$($(BOOK)_DOCBOOK_FILES))))
+$(foreach BOOK, $(BOOKS), $(eval $(call valrule,$(BOOK),$($(BOOK)_DOCBOOK_MFILE))))
 
-out/forvalidation.xml: $(DCBOOK_FILES)
+out/forvalidation.xml: $(DCBOOK_MFILE)
 	xmllint --noent book.xml > out/forvalidation.xml
 
 validate: out/forvalidation.xml
