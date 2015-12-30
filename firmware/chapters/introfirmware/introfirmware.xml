@@ -5,9 +5,38 @@
       sobre todo le permite reutilizar el código escrito en múltiples plataformas.</para>
    <para>El CIAA-Firmware ofrece un sistema operativo <xref linkend="ch_rtos"/></para>
    <section><title>Módulos del Firmware</title>
-      <para>El CIAA-Firmware fue pensado para ser modular y escalable. El usuario.</para>
+      <para>El CIAA-Firmware fue pensado para ser modular y escalable. El usuario puede decidir
+         para su proyecto que <emphasis>módulo</emphasis> necesita y así activarlos. Siempre
+         y cuando tenga en cuenta las dependencias, ya que algunos módulos necesitan
+         de otros. Por ejemplo el módulo de <emphasis>posix</emphasis> necesita hoy
+         del módulo <emphasis>rtos</emphasis>.</para>
+      <para>Los módulos del Firmware se encuentran en el directorio <filename>modules</filename>
+         en el directorio principal del firmware.</para>
+      <para>En el <filename>Makefile</filename> de cada proyecto se puede seleccionar que módulos
+         se desaen utilizar. Por ejemplo el ejemplo <emphasis>blinking</emphasis> que se encuentra
+         en <filename>examples/blinking</filename> utiliza los módulos indicados en el
+         <xref linkend="ex_usedmodules"/>.</para>
+      <example xml:id="ex_usedmodules"><title>Módulos utilizados</title>
+         <programlisting language="makefile"><filename>examples/blinking/mak/Makefile</filename>
+MODS ?= <co xml:id="co.mod_01"/> modules$(DS)posix           \<co xml:id="co.mod_02"/>
+        modules$(DS)ciaak           \
+        modules$(DS)drivers         \
+        modules$(DS)rtos            \
+        modules$(DS)libs
+         </programlisting>
+         <calloutlist>
+            <callout arearef="co.mod_01">
+               <para>La variable MODS define los módulos que el Makefile utilizará para generar el proyecto.</para>
+            </callout>
+            <callout arearef="co.mod_02">
+               <para>Entre otros se selecciona el módulo de <emphasis>posix</emphasis>.</para>
+            </callout>
+         </calloutlist>
+      </example>
+      <para>foo</para>
    </section>
    <section><title>Estructura de directorios</title>
+      <para></para>
    </section>
    <section><title>El Makefile</title>
       <para>...</para>

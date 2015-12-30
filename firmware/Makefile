@@ -36,9 +36,10 @@ firmware_PATH	= firmware
 
 firmware_DOCBOOK_MFILE = $(firmware_PATH)$(DS)book.xml
 
-firmware_DOCBOOK_FILES = $(firmware_DOCBOOK_MFILE)										\
-								 $(wildcard $(firmware_PATH)$(DS)chapters/intro/*xml)	\
-								 $(wildcard $(firmware_PATH)$(DS)chapters/hisio/*xml)
+firmware_DOCBOOK_FILES = $(firmware_DOCBOOK_MFILE)													\
+								 $(wildcard $(firmware_PATH)$(DS)chapters/intro/*xml)				\
+								 $(wildcard $(firmware_PATH)$(DS)chapters/introfirmware/*xml)	\
+                         $(wildcard $(firmware_PATH)$(DS)chapters/hisio/*xml)
 
 firmware_UML_FILES	  = $(wildcard $(wildcard $(firmware_PATH)chapters/hisio/uml/*.uml)
 
