@@ -145,8 +145,20 @@ spell:
 	java -jar plantuml.jar $< -o ../../$(PNG_OUT)
 
 help:
-	@echo validate................: validates the docbook xml agianst the schema
-	@echo html....................: generates html output
-	@echo doc.....................: generates pdf output
-	@echo clean...................: cleans the project
-	@echo spell...................: check spelling
+	@echo "+-----------------------------------------------------------------------------+"
+	@echo "|               Book specific commands                                        |"
+	@echo "| Use make info to see which books can be build                               |"
+	@echo "+-----------------------------------------------------------------------------+"
+	@echo \<book\>_validate................: validates the docbook xml agianst the schema
+	@echo \<book\>_html....................: generates html output
+	@echo \<book\>_pdf.....................: generates pdf
+	@echo "+-----------------------------------------------------------------------------+"
+	@echo "|               General commands                                              |"
+	@echo "+-----------------------------------------------------------------------------+"
+	@echo info...........................: information
+	@echo clean..........................: cleans the project
+	@echo spell..........................: check spelling \(not working\)
+	@echo all or make without parameter..: builds all books in all formats
+
+info:
+	@echo List of books: $(BOOKS)
