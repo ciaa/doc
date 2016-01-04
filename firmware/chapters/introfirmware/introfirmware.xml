@@ -25,10 +25,10 @@ MODS ?= <co xml:id="co.mod_01"/> modules$(DS)posix           \<co xml:id="co.mod
         modules$(DS)libs
          </programlisting>
          <calloutlist>
-            <callout arearef="co.mod_01">
+            <callout arearefs="co.mod_01">
                <para>La variable MODS define los módulos que el Makefile utilizará para generar el proyecto.</para>
             </callout>
-            <callout arearef="co.mod_02">
+            <callout arearefs="co.mod_02">
                <para>Entre otros se selecciona el módulo de <emphasis>posix</emphasis>.</para>
             </callout>
          </calloutlist>

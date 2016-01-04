@@ -3,6 +3,7 @@
 <!ENTITY intro SYSTEM "chapters/intro/intro.xml">
 <!ENTITY introfirmware SYSTEM "chapters/introfirmware/introfirmware.xml">
 <!ENTITY hisio SYSTEM "chapters/hisio/hisio.xml">
+<!ENTITY improvethisdocu SYSTEM "../general/improve_docu.xml">
 ]>
 <book xmlns="http://docbook.org/ns/docbook" version="5.0"
    xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="es">
