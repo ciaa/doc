@@ -1,4 +1,14 @@
 <section xmlns:xlink="http://www.w3.org/1999/xlink"><title>Mejorando la documentación</title>
-   <para>Esta documentación ....</para>
-   <para>TODO2</para>
+   <para>El proyecto CIAA tiene dos grandes fuentes de documentación. Durante el desarrollo se
+      utiliza la wiki del proyecto <link xlink:href="http://www.proyecto-ciaa.com.ar/">proyecto-ciaa.com.ar</link>,
+      mientras que para los usuarios finales se generan manuales similares a este en formato <emphasis>DocBook</emphasis>.</para>
+   <para>Los fuentes de los manuales en <emphasis>DocBook</emphasis> se encuentran en
+      <link xlink:href="https://github.com/ciaa/doc">github.com/ciaa/doc</link></para>
+   <para><emphasis>DocBook</emphasis> es un formato de documentación basado en <emphasis>xml</emphasis>. El proyecto CIAA
+      utiliza la versión 5. El manual oficial y de referencia de <emphasis>DocBook</emphasis> se puede encontrar en
+      <link xlink:href="http://www.docbook.org/tdg5/en/html/">docbook.org/tdg5/en/html</link> sin embargo en la mayoria
+      de los casos el lenguaje es bastante intuitivo y se pueden copiar y pegar otras partes del documento.</para>
+   <para>Quienes quieran mejorar la documetnación pueden hacer un fork de este repositorio en <emphasis>GitHub</emphasis>
+      para luego una vez realizados realizar un <emphasis>pull request</emphasis> o pedir acceso al repositorio
+      de la documentación y hacer las mejoras sobre un branch.</para>
 </section>
