@@ -4,6 +4,10 @@ This is the Root directory of the CIAA Documentation Project. This project conta
 During the development of new modules and not completed documentation may be found in the CIAA Project WebPage:
 http://www.proyecto-ciaa.com.ar. Once the documentation becomes stable is added to this documentation repo.
 
+<h2>Download generated Documentation</h2>
+
+If you do not want to generate the documentation yourself, you may want to try our Jenkins output. For each commit on this repo the HTML and PDFs are generated automatically and can be downloaded from: http://ciaa1.uns.edu.ar/jenkins/job/Documentation/
+
 <h2>Dependencies to build the documentation</h2>
 
 This documentation is based on **DocBook** you will need the following packages in Linux to generate pdfs and htmls
