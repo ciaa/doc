@@ -1,10 +1,94 @@
 <chapter xmlns:xlink="http://www.w3.org/1999/xlink"><title>Introducción al CIAA-Firmware</title>
    <para>Se denomina <emphasis>Firmware</emphasis> al programa que controla un dispositivo electrónico.
       En el proyecto CIAA se ha desarrollado un Firmware propio al cual se lo denomina <emphasis>CIAA-Firmware</emphasis>.
-      El CIAA-Firmware permite al usuario crear una aplicación con valor agregado de forma rápida y sencilla, pero por
+      El CIAA-Firmware permi te al usuario crear una aplicación con valor agregado de forma rápida y sencilla, pero por
       sobre todo le permite reutilizar el código escrito en múltiples plataformas.</para>
    <para>El CIAA-Firmware ofrece un sistema operativo <xref linkend="ch_rtos"/></para>
-   <section><title>Módulos del Firmware</title>
+   <section xml:id="sec_firm_install"><title>Instalación</title>
+      <para>El <emphasis>CIAA-Firmware</emphasis> se puede instalar bajando una release
+         desde GitHub o clonando el repositorio, quien quiera utilizar un repositorio
+         para su desarrollo también podrá realizar un <emphasis>fork</emphasis>.
+         En las siguientes 3 secciones se explican las opciones en detalle.</para>
+         <note><para>En este documento no se explica la instalación del entorno
+               de desarrollo. Para detalles sobre la instalación del IDE por favor
+               vea ... TODO</para></note>
+      <section><title>Instalando mediante el clonado del repositorio</title>
+         <para>Clonando el repositorio podrá no solo acceder a los archivos del
+            <emphasis>CIAA-Firmware</emphasis> sino también a la historia de los mismos.</para>
+         <para>Para poder clonar el repositorio necesitará la herramienta <emphasis>git
+            </emphasis> instalada en su sistema. Todos los ejemplos a continuación son en
+            base a la linea de comandos de <emphasis>git</emphasis>.</para>
+<screen><prompt>$</prompt> <command>git clone --recursive https://github.com/ciaa/Firmware.git <replaceable>Firmware</replaceable> </command>
+Cloning into 'Firmware'...
+...</screen>
+            <important><para>Es importante usar la opción <command>--recursive</command> ya que el
+                  <emphasis>CIAA-Firmware</emphasis> utiliza submódulos de git y para
+                  clonarlos también es necesaria esta opción.</para></important>
+            <para>Donde <command>Firmware</command> es el directorio donde deseamos clonar el
+               repositorio.</para>
+            <para>Una vez clonado el repositorio en el directorio indicado se encontrará el
+               <emphasis>master</emphasis> del desarrollo. Si quiere utiliar una
+               release puede listar las mismas como se indica a continuación.</para>
+<screen><prompt>$</prompt> <command>git tag -l</command>
+0.0.1
+0.2.0
+0.3.0
+0.3.0-rc1
+0.3.0-rc2
+0.4.0
+0.4.1
+0.5.0
+0.6.0
+0.6.1
+0.7.0-alpha
+1.0.0
+</screen>
+            <para>Si luego desea por ejemplo utilizar la release <emphasis>1.0.0</emphasis>
+               debe ejecutar el siguiente comando.</para>
+<screen><prompt>$</prompt> <command>git checkout tags/1.0.0</command>
+M  modules/modbus
+M  modules/rtos
+Note: checking out 'tags/1.0.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at 0daaa62... add Upa to release short
+</screen>
+         <para>Por último como el <emphasis>CIAA-Firmware</emphasis> utiliza submódulos de
+            git será necesario correr el siguiente comando.</para>
+<screen><prompt>$</prompt> <command>git submodule update</command>
+Submodule path 'modules/modbus': checked out '05cec18fd210ff8f10f6d9689aff0def7d7bf11f'
+Submodule path 'modules/rtos': checked out 'fdb5b7ba160d60d3065ebcf7cdc2de3464c3f115'
+</screen>
+      </section>
+      <section><title>Instalando desde GitHub</title>
+         <para>De esta forma se instala una versión específica del
+            <emphasis>CIAA-Firmware</emphasis> la cual se descarga desde GitGub.</para>
+         <para>Desde <link xlink:href="https://github.com/ciaa/Firmware/releases">
+               https://github.com/ciaa/Firmware/releases</link> seleccione la release
+            que desea descargar y descargue el archivo <emphasis>Firmware_...</emphasis>
+            con la extensión <emphasis>zip</emphasis> o <emphasis>tar.gz</emphasis>.</para>
+         <important><para>No descargue utilizando los links <emphasis>Source code</emphasis>
+               ya que los mismos no incluiran los submódulos utilizadas opor el
+               <emphasis>CIAA-Firmware</emphasis>.</para></important>
+         <para>Simplemente descomprima la release y comience a utilizar el Firmware.</para>
+      </section>
+      <section><title>Haciendo un Fork en GitHub</title>
+         <para>TODO</para>
+      </section>
+   </section>
+   <section><title>Compilando Blinking</title>
+      <para><emphasis>blinking</emphasis> es el ejemplo más sencillo para la utilización
+         del <emphasis>CIAA-Firmware</emphasis>.</para>
+   </section>
+   <section xml:id="sec_firm_mod"><title>Módulos del Firmware</title>
       <para>El CIAA-Firmware fue pensado para ser modular y escalable. El usuario puede decidir
          para su proyecto que <emphasis>módulo</emphasis> necesita y así activarlos. Siempre
          y cuando tenga en cuenta las dependencias, ya que algunos módulos necesitan
@@ -36,7 +120,10 @@ MODS ?= <co xml:id="co.mod_01"/> modules$(DS)posix           \<co xml:id="co.mod
       <para>foo</para>
    </section>
    <section><title>Estructura de directorios</title>
-      <para></para>
+      <para>El <emphasis>CIAA-Firmware</emphasis> está construido de forma modular como se explica
+         en la <xref linkend="sec_firm_mod"/>. Está sección explica como estan organizado los
+         directorios del mismo.</para>
+      <para>En el directorio principal, luego de instalar el Firmware como se explica en la <xref linkend="sec_firm_install"/>.</para>
    </section>
    <section><title>El Makefile</title>
       <para>...</para>
